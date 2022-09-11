@@ -1,0 +1,16 @@
+- defaults:
+    link:
+      relink: true
+
+- link:
+    ~/.aliases: aliases
+    ~/.bashrc: bashrc
+    ~/.bash_profile: bash_profile
+    ~/.exports: exports
+    ~/.functions: functions
+    ~/.gitconfig: gitconfig
+    ~/.tmux.conf: tmux.conf
+    ~/.vimrc: vimrc
+    ~/.ssh/config:
+      create: true
+      path: ssh/config

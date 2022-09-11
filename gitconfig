@@ -1,0 +1,108 @@
+# Here are some references:
+#   https://github.com/mathiasbynens/dotfiles/blob/main/.gitconfig
+#   https://github.com/jessfraz/dotfiles/blob/master/.gitconfig
+
+[alias]
+
+	# View abbreviated SHA, description, and history graph of the latest 20 commits.
+	l = log --pretty=oneline -n 20 --graph --abbrev-commit
+
+	# View abbreviated SHA, description, and history graph of all available commits.
+	ll = log --pretty=oneline --graph --abbrev-commit
+
+  # View the current working tree status using the short format
+  s = status -s
+
+  # Show details of current commit
+  sh = show
+
+  # Show the stats of current commit
+  ss = show --stat
+
+	# Show the diff between the latest commit and the current state.
+	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+
+	# Commit all changes.
+	ca = !git add -A && git commit -av --allow-empty
+
+	# Switch to a branch, creating it if necessary.
+	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+
+	# Show verbose output about tags, branches or remotes
+	tags = tag -l
+	branches = branch --all
+	remotes = remote --verbose
+
+	# List aliases.
+	aliases = config --get-regexp alias
+
+	# Amend the currently commit.
+	amend = commit --amend --allow-empty
+
+	# Interactive rebase with the given number of latest commits.
+	reb = "!r() { git rebase -i HEAD~$1; }; r"
+
+	# Find branches containing commit
+	fb = "!f() { git branch -a --contains $1; }; f"
+
+	# Find commits by commit message
+	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+
+	# List contributors with number of commits.
+	contributors = shortlog --summary --numbered
+
+	# Show the user email for the current repository.
+	whoami = config user.email
+
+	# Color graph log view
+	graph = log --graph --color --pretty=format:"%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%x20(%ce)%n%x20%s%n"
+
+	# Workspace: gerrit push and pull (default)
+  mypush = push cambridge HEAD:refs/for/master
+  mypull = pull local master
+
+  # empty commit
+  empty = commit --allow-empty
+
+[apply]
+	# Detect whitespace errors when applying a patch.
+	whitespace = fix
+
+[color]
+	# Use colors in Git commands that are capable of colored output when
+	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
+	ui = auto
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold # line info
+	old = red # deletions
+	new = green # additions
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[diff]
+	# Detect copies as well as renames.
+	renames = copies
+
+[diff "bin"]
+	# Use `hexdump` to diff binary files.
+	textconv = hexdump -v -C
+
+[help]
+	# Automatically correct and execute mistyped commands.
+	autocorrect = 1
+
+[user]
+	name = Hao Sun
+[core]
+	editor = vim
+	hooksPath = /home/haosun01/ci-scripts/helper/githooks

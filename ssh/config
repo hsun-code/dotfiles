@@ -1,0 +1,11 @@
+# Default Github
+Host github.com
+  Hostname github.com
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/id_rsa
+
+Host hsun.github.com
+  Hostname github.com
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/shqking
+
