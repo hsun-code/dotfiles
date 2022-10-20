@@ -55,4 +55,6 @@ alias p="cd ~/jdk/jdk-src-dev"
 alias myshare="cd /mnt/share/homes/haosun01/work-in-container/"
 alias jdk-reconf-build="make reconfigure;make clean;make images JOBS=128"
 alias jdk-build="make images JOBS=128"
+alias login-a64fx2="bash /mnt/share/homes/haosun01/work-in-container/scripts/login-a64fx2.sh"
+alias login-a64fx3="bash /mnt/share/homes/haosun01/work-in-container/scripts/login-a64fx3.sh"
 
