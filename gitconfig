@@ -25,8 +25,17 @@
 	# Commit all changes.
 	ca = !git add -A && git commit -av --allow-empty
 
-	# Switch to a branch, creating it if necessary.
-	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+	# Delete one branch.
+	db = "!f() { git branch -D \"$1\"; }; f"
+
+	# Switch to a branch
+	go = "!f() { git checkout \"$1\"; }; f"
+
+  # New one branch based on current branch.
+	n = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+
+  # New one branch based on $2.
+	nn = "!f() { git checkout -b \"$1\" \"$2\" 2> /dev/null || git checkout \"$1\"; }; f"
 
 	# Show verbose output about tags, branches or remotes
 	tags = tag -l
