@@ -45,6 +45,7 @@ alias grep='grep --color=auto '
 alias bk="cd -"
 alias c="clear"
 alias cc="cat"
+alias fd="find . -name"
 alias h="history | tail -40"
 alias n="nvim"
 alias sr="source ~/.bashrc"
