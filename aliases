@@ -42,11 +42,12 @@ alias ~="cd ~"
 alias grep='grep --color=auto '
 
 # Shortcuts
-alias h="history | tail -40"
-alias sr="source ~/.bashrc"
-alias cc="cat"
 alias bk="cd -"
+alias c="clear"
+alias cc="cat"
+alias h="history | tail -40"
 alias n="nvim"
+alias sr="source ~/.bashrc"
 
 # untar
 alias untar="tar xvf"
