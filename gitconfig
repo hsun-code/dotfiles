@@ -115,4 +115,4 @@
 	name = Hao Sun
 [core]
 	editor = vim
-	hooksPath = /home/haosun01/ci-scripts/helper/githooks
+	hooksPath = $HOME/ci-scripts/helper/githooks

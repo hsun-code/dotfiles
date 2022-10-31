@@ -8,7 +8,7 @@ export LC_ALL="en_US.UTF-8";
 export MANPAGER="less -X";
 
 # Workspace: hsdis and jtreg
-MY_LIB_PATH="/home/haosun01/libs"
+MY_LIB_PATH="$HOME/libs"
 if [[ "$LD_LIBRARY_PATH" != *"$MY_LIB_PATH:"* ]]; then
   export LD_LIBRARY_PATH="$MY_LIB_PATH:$LD_LIBRARY_PATH"
 fi
