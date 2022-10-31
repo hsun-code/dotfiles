@@ -12,3 +12,6 @@ try_install() {
 banner "Try to install package tmux"
 try_install tmux
 
+banner "Try to install package safe-rm"
+try_install safe-rm
+
