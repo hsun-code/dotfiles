@@ -40,3 +40,8 @@ man() {
 		man "$@"
 }
 
+# Find the file in current directory
+function fd() {
+  find . -name "$@"
+}
+
