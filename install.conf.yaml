@@ -6,11 +6,14 @@
     ~/.aliases: aliases
     ~/.bashrc: bashrc
     ~/.bash_profile: bash_profile
+    ~/.config/nvim:
+      create: true
+      path: nvim
     ~/.exports: exports
     ~/.functions: functions
     ~/.gitconfig: gitconfig
-    ~/.tmux.conf: tmux.conf
-    ~/.vimrc: vimrc
     ~/.ssh/config:
       create: true
       path: ssh/config
+    ~/.tmux.conf: tmux.conf
+    ~/.vimrc: vimrc
