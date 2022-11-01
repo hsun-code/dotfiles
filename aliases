@@ -56,6 +56,7 @@ alias untar="tar xvf"
 
 # Workspace
 alias p="cd ~/jdk/jdk-src-dev"
+alias mydot="cd ~/hsun-code.code/dotfiles"
 alias myshare="cd /mnt/share/homes/haosun01/work-in-container/"
 alias jdk-reconf-build="make reconfigure;make clean;make images JOBS=128"
 alias jdk-build="make images JOBS=128"

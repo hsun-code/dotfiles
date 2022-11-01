@@ -7,5 +7,5 @@ Host github.com
 Host hsun.github.com
   Hostname github.com
   IdentitiesOnly yes
-  IdentityFile ~/.ssh/shqking
+  IdentityFile ~/.ssh/hsun-code
 
