@@ -58,8 +58,11 @@ alias untar="tar xvf"
 # Workspace
 alias p="cd ${HOME}/jdk/jdk-src-dev"
 alias mydot="cd ${HOME}/hsun-code.code/dotfiles"
-alias jdk-reconf-build="make reconfigure;make clean;make images JOBS=128"
-alias jdk-build="make images JOBS=128"
+
+if [ $(nproc) -gt 4 ] ; then njobs=$(($(nproc) / 2)) ; else njobs=1 ; fi
+alias jdk-reconf-build="make reconfigure;make clean;make images JOBS=${njobs}"
+alias jdk-build="make images JOBS=${njobs}"
+
 alias login-a64fx2="bash ${HOME}/myshare/scripts/login-a64fx2.sh"
 alias login-a64fx3="bash ${HOME}/myshare/scripts/login-a64fx3.sh"
 
