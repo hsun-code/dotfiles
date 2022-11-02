@@ -4,11 +4,47 @@
 
 [alias]
 
+	# Amend the currently commit.
+	amend = commit --amend --allow-empty
+
+  # Show current branch.
+  b = branch
+
+  # Commit. Note empty commit is allowed.
+  c = commit --allow-empty
+
+	# Commit all changes.
+	ca = !git add -A && git commit -av --allow-empty
+
+	# Show the diff between the latest commit and the current state.
+	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+
+	# Delete one branch.
+	db = "!f() { git branch -D \"$1\"; }; f"
+
+	# Find branches containing commit
+	fb = "!f() { git branch -a --contains $1; }; f"
+
+	# Find commits by commit message
+	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+
+	# Switch to a branch
+	go = "!f() { git checkout \"$1\"; }; f"
+
 	# View abbreviated SHA, description, and history graph of the latest 20 commits.
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
 
 	# View abbreviated SHA, description, and history graph of all available commits.
 	ll = log --pretty=oneline --graph --abbrev-commit
+
+  # New one branch based on current branch.
+	n = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+
+  # New one branch based on $2.
+	nn = "!f() { git checkout -b \"$1\" \"$2\" 2> /dev/null || git checkout \"$1\"; }; f"
+
+  # Rebase to branch $1.
+	reb = "!f() { git rebase \"$1\" --empty=keep; }; f"
 
   # View the current working tree status using the short format
   s = status -s
@@ -19,44 +55,16 @@
   # Show the stats of current commit
   ss = show --stat
 
-	# Show the diff between the latest commit and the current state.
-	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
-
-	# Commit all changes.
-	ca = !git add -A && git commit -av --allow-empty
-
-	# Delete one branch.
-	db = "!f() { git branch -D \"$1\"; }; f"
-
-	# Switch to a branch
-	go = "!f() { git checkout \"$1\"; }; f"
-
-  # New one branch based on current branch.
-	n = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
-
-  # New one branch based on $2.
-	nn = "!f() { git checkout -b \"$1\" \"$2\" 2> /dev/null || git checkout \"$1\"; }; f"
-
 	# Show verbose output about tags, branches or remotes
 	tags = tag -l
 	branches = branch --all
-  b = branch
 	remotes = remote --verbose
 
 	# List aliases.
 	aliases = config --get-regexp alias
 
-	# Amend the currently commit.
-	amend = commit --amend --allow-empty
-
 	# Interactive rebase with the given number of latest commits.
-	reb = "!r() { git rebase -i HEAD~$1; }; r"
-
-	# Find branches containing commit
-	fb = "!f() { git branch -a --contains $1; }; f"
-
-	# Find commits by commit message
-	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+  # reb = "!r() { git rebase -i HEAD~$1; }; r"
 
 	# List contributors with number of commits.
 	contributors = shortlog --summary --numbered
@@ -70,9 +78,6 @@
 	# Workspace: gerrit push and pull (default)
   mypush = push cambridge HEAD:refs/for/master
   mypull = pull local master
-
-  # empty commit
-  empty = commit --allow-empty
 
 [apply]
 	# Detect whitespace errors when applying a patch.
