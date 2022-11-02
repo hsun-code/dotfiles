@@ -49,16 +49,16 @@ alias fd="find . -name"
 alias h="history | tail -40"
 alias n="nvim"
 alias rm="safe-rm"
-alias sr="source ~/.bashrc"
+alias sr="source ${HOME}/.bashrc"
 
 # untar
 alias untar="tar xvf"
 
 # Workspace
-alias p="cd ~/jdk/jdk-src-dev"
-alias mydot="cd ~/hsun-code.code/dotfiles"
+alias p="cd ${HOME}/jdk/jdk-src-dev"
+alias mydot="cd ${HOME}/hsun-code.code/dotfiles"
 alias jdk-reconf-build="make reconfigure;make clean;make images JOBS=128"
 alias jdk-build="make images JOBS=128"
-alias login-a64fx2="bash $HOME/myshare/scripts/login-a64fx2.sh"
-alias login-a64fx3="bash $HOME/myshare/scripts/login-a64fx3.sh"
+alias login-a64fx2="bash ${HOME}/myshare/scripts/login-a64fx2.sh"
+alias login-a64fx3="bash ${HOME}/myshare/scripts/login-a64fx3.sh"
 

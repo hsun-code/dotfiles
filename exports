@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Prefer US English and use UTF-8
 export LANG="en_US.UTF-8";
@@ -8,7 +8,7 @@ export LC_ALL="en_US.UTF-8";
 export MANPAGER="less -X";
 
 # Workspace: hsdis and jtreg
-MY_LIB_PATH="$HOME/libs"
+MY_LIB_PATH="${HOME}/libs"
 if [[ "$LD_LIBRARY_PATH" != *"$MY_LIB_PATH:"* ]]; then
   export LD_LIBRARY_PATH="$MY_LIB_PATH:$LD_LIBRARY_PATH"
 fi
