@@ -50,6 +50,7 @@ alias h="history | tail -40"
 alias n="nvim"
 alias rm="safe-rm"
 alias sr="source ${HOME}/.bashrc"
+alias v="vim"
 
 # untar
 alias untar="tar xvf"
