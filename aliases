@@ -58,6 +58,7 @@ alias untar="tar xvf"
 # Workspace
 alias p="cd ${HOME}/jdk/jdk-src-dev"
 alias mydot="cd ${HOME}/hsun-code.code/dotfiles"
+alias myhome="cd ${HOME}/myhome"
 
 if [ $(nproc) -gt 4 ] ; then njobs=$(($(nproc) / 2)) ; else njobs=1 ; fi
 alias jdk-reconf-build="make reconfigure;make clean;make images JOBS=${njobs}"
