@@ -26,6 +26,9 @@ try_install safe-rm
 banner "Try to install package numactl"
 try_install numactl
 
+banner "Try to install package tree"
+try_install tree
+
 # JDK dependencies
 banner "Try to install OpenJDK dependencies"
 try_install libasound2-dev
