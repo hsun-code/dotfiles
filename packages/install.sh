@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-source helper.sh
-bash install_basic_packages.sh
-bash install_neovim.sh
+MY_DOT=$HOME/hsun-code.code/dotfiles
+source $MY_DOT/packages/helper.sh
+bash $MY_DOT/packages/install_basic_packages.sh
+bash $MY_DOT/packages/install_neovim.sh
 
