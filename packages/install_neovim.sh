@@ -41,16 +41,3 @@ banner "Try to install NvChad's prerequisites"
 # Required for grep searching with Telescope plugin
 hsun_try_install ripgrep
 
-banner "Try to install NvChad"
-# TODO: will change to my forked repo later.
-# TODO: in the bashrc, will pull the latest code each time
-nvchad_repo="https://github.com/NvChad/NvChad"
-nvchad_dir="$HOME/.config/nvim"
-if [[ ! -d $nvchad_dir ]]; then
-  rm -rf ~/.local/share/nvim
-  git clone $nvchad_repo $nvchad_dir --depth 1
-  msg "Done"
-else
-  msg "Installed already"
-fi
-

@@ -16,5 +16,7 @@ shopt -s cdspell
 
 # Workspace
 cd ${HOME}/ci-scripts && git pull local master && cd -
+cd ${HOME}/hsun-code.code/dotfiles && git pull origin master && cd -
+cd ${HOME}/hsun-code.code/NvChad && git pull origin master && cd -
 source ${HOME}/ci-scripts/helper/envsetup.sh
 

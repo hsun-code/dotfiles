@@ -6,6 +6,9 @@
     ~/.aliases: aliases
     ~/.bashrc: bashrc
     ~/.bash_profile: bash_profile
+    ~/.config/nvim:
+      create: true
+      path: ~/hsun-code.code/NvChad
     ~/.exports: exports
     ~/.functions: functions
     ~/.gitconfig: gitconfig
