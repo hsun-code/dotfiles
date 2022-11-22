@@ -16,5 +16,5 @@ shopt -s cdspell
 
 # Workspace
 cd ${HOME}/ci-scripts && git pull local master && cd -
-source ${HOME}/ci-scripts/helper/envsetup.sh
+. ${HOME}/ci-scripts/helper/envsetup.sh
 
