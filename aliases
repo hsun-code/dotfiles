@@ -26,14 +26,14 @@ alias ls="command ls ${colorflag}"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-alias hh="cd ~"
 
 # Always enable colored `grep` output
 alias grep='grep --color=auto '
 
 # Shortcuts
 alias bk="cd -"
-alias c="clear"
+alias c="cd"
+alias cl="clear"
 alias cc="cat"
 alias fd="find . -name"
 alias h="history | tail -40"
