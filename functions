@@ -5,6 +5,11 @@ function mkd() {
 	mkdir -p "$@" && cd "$_";
 }
 
+# Open one directory and list the content
+function c() {
+	cd "$@" && ls;
+}
+
 # Determine size of a file or total size of a directory
 function fs() {
 	if du -b /dev/null > /dev/null 2>&1; then
@@ -41,6 +46,7 @@ man() {
 }
 
 function mypull() {
+  # TODO: nvchad... shoudl fetch the latest code from upstream.
   banner "Update hsun-code dotfiles and NvChad"
   cd ${HOME}/hsun-code.code/dotfiles && git pull origin master && cd -
   cd ${HOME}/hsun-code.code/NvChad && git pull origin master && cd -

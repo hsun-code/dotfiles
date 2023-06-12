@@ -33,7 +33,6 @@ alias grep='grep --color=auto '
 
 # Shortcuts
 alias bk="cd -"
-alias c="cd"
 alias cl="clear"
 alias cc="cat"
 alias fd="find . -name"
@@ -47,10 +46,10 @@ alias v="vim"
 alias untar="tar xvf"
 
 # Workspace
-alias p="cd ${HOME}/jdk/jdk-src-dev"
-alias mydot="cd ${HOME}/hsun-code.code/dotfiles"
-alias myhome="cd ${HOME}/myhome"
-alias mynv="cd ${HOME}/hsun-code.code/NvChad"
+alias p="cd ${HOME}/jdk/jdk-src-dev; l"
+alias mydot="cd ${HOME}/hsun-code.code/dotfiles; l"
+alias myhome="cd ${HOME}/myhome; l"
+alias mynv="cd ${HOME}/hsun-code.code/NvChad; l"
 
 if [ $(nproc) -gt 4 ] ; then njobs=$(($(nproc) / 2)) ; else njobs=1 ; fi
 alias jdk-reconf-build="make reconfigure;make clean;make images JOBS=${njobs}"
