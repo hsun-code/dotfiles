@@ -24,9 +24,9 @@ alias ls="command ls ${colorflag}"
 ################
 
 # Easier navigation: .., ..., ...., ~
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
+alias ..="cd ..; ls"
+alias ...="cd ../..; ls"
+alias ....="cd ../../..; ls"
 
 # Always enable colored `grep` output
 alias grep='grep --color=auto '
