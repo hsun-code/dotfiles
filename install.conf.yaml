@@ -4,7 +4,9 @@
 
 - link:
     ~/.aliases: aliases
-    ~/.bashrc: bashrc
+    ~/.bashrc:
+      force: true
+      path: bashrc
     ~/.bash_profile: bash_profile
     ~/.config/nvim:
       create: true
