@@ -43,7 +43,20 @@ unset file
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell
 
+# bash completion
+if [[ -f /usr/share/bash-completion/bash_completion ]]; then
+  . /usr/share/bash-completion/bash_completion
+elif [[ -f /etc/bash_completion ]]; then
+  . /etc/bash_completion
+fi
+
+#
 # Workspace
+#
+
+# Always get the latest code for ci-scripts repo and set up the env
 cd ${HOME}/ci-scripts && git pull local master && cd -
 . ${HOME}/ci-scripts/helper/envsetup.sh
+
+# todo: remove nvim swap files
 
