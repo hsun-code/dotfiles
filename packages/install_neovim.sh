@@ -72,5 +72,5 @@ fi
 #
 banner "Try to install NvChad's prerequisites"
 msg "install ripgrep: Required for grep searching with Telescope plugin"
-hsun_try_install ripgrep
+hsun_ubuntu_try_install ripgrep
 

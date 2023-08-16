@@ -2,6 +2,10 @@
 
 source $HOME/hsun-code.code/dotfiles/packages/helper.sh
 
+#
+# Install common packages
+#
+
 if is_macos; then
   hsun_macos_try_install bash-completion
   # Install common utilities.
@@ -13,7 +17,12 @@ if is_macos; then
   # Install dot
   brew install graphviz
 else
-  bash $HSUN_DOTS/packages/install_basic_packages.sh
+  # common ones
+  hsun_ubuntu_try_install tmux numactl tree
+  # JDK related
+  hsun_ubuntu_try_install libasound2-dev libcups2-dev libfontconfig1-dev
+  hsun_ubuntu_try_install libx11-dev libxext-dev libxrender-dev libxrandr-dev
+  hsun_ubuntu_try_install libxtst-dev libxt-dev
 fi
 
 # install neovim only on ubuntu

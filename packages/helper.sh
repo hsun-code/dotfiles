@@ -63,9 +63,15 @@ hsun_macos_try_install() {
 # The first argument is the package name to be checked (and installed if not already).
 # other arguments are passed to apt-get
 hsun_ubuntu_try_install() {
-    dpkg -l "$1" | grep -q ^ii && echo "$1: Installed already" && return 1
-    sudo apt-get -y install "$1"
-    return 0
+  for package in "$@";
+  do
+    if dpkg -l "$package" | grep -q ^ii; then
+      echo "Installed already: $package "
+    else
+      echo "Try to install: $package"
+      sudo apt-get -y install "$package"
+    fi
+  done
 }
 
 # returns 0 if the package was already installed and 1 otherwise.
