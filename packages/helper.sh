@@ -86,7 +86,6 @@ export -f hsun_ubuntu_is_installed
 ###################
 
 # include HSUN_LIBS
-MY_LIB_PATH="${HOME}/libs"
 if [[ "$LD_LIBRARY_PATH" != *"$HSUN_LIBS:"* ]]; then
   export LD_LIBRARY_PATH="$HSUN_LIBS:$LD_LIBRARY_PATH"
 fi
