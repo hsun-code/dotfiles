@@ -120,4 +120,3 @@ autocorrect = 1
 name = Hao Sun
 [core]
 editor = vim
-hooksPath = ~/ci-scripts/helper/githooks
