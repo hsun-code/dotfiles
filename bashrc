@@ -53,12 +53,12 @@ if [[ -f /usr/share/bash-completion/bash_completion ]]; then
 elif [[ -f /etc/bash_completion ]]; then
   . /etc/bash_completion
 elif [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]]; then
-  # macos
-  # TODO: git docker completion
+  # macos: bash completion
   . /opt/homebrew/etc/profile.d/bash_completion.sh
+elif [[ -r "/opt/homebrew/etc/bash_completion.d/git-completion.bash" ]]; then
+  # macos: git completion
+  . /opt/homebrew/etc/bash_completion.d/git-completion.bash
 fi
-
-[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh" 
 
 #
 # Workspace
