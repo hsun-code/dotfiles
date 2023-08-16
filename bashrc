@@ -31,8 +31,11 @@ export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
+# env setup for dotfiles
+source "${HOME}/hsun-code.code/dotfiles/packages/helper.sh"
+
 # We do this before the following so that all the paths work.
-for file in ${HOME}/.{aliases,functions,exports}; do
+for file in ${HOME}/.{aliases,functions}; do
 	if [[ -r "$file" ]] && [[ -f "$file" ]]; then
 		# shellcheck source=/dev/null
 		source "$file"

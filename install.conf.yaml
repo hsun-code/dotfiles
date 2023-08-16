@@ -13,7 +13,6 @@
     ~/.config/nvim:
       create: true
       path: ~/hsun-code.code/NvChad
-    ~/.exports: exports
     ~/.functions: functions
     ~/.gitconfig: gitconfig
     ~/.tmux.conf: tmux.conf
