@@ -7,15 +7,14 @@
     ~/.bashrc:
       force: true
       path: bashrc
-    ~/.bash_profile: bash_profile
+    ~/.bash_profile:
+      force: true
+      path: bash_profile
     ~/.config/nvim:
       create: true
       path: ~/hsun-code.code/NvChad
     ~/.exports: exports
     ~/.functions: functions
     ~/.gitconfig: gitconfig
-    ~/.ssh/config:
-      create: true
-      path: ssh/config
     ~/.tmux.conf: tmux.conf
     ~/.vimrc: vimrc
