@@ -60,6 +60,11 @@ elif [[ -r "/opt/homebrew/etc/bash_completion.d/git-completion.bash" ]]; then
   . /opt/homebrew/etc/bash_completion.d/git-completion.bash
 fi
 
+# macos homebrew
+if is_macos; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 #
 # Workspace
 #
