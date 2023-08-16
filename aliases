@@ -55,6 +55,3 @@ if [ $(nproc) -gt 4 ] ; then njobs=$(($(nproc) / 2)) ; else njobs=1 ; fi
 alias jdk-reconf-build="make reconfigure;make clean;make images JOBS=${njobs};make test-image"
 alias jdk-build="make images JOBS=${njobs};make test-image"
 
-# alias login-a64fx2="bash ${HOME}/myhome/scripts/login-a64fx2.sh"
-# alias login-a64fx3="bash ${HOME}/myhome/scripts/login-a64fx3.sh"
-
