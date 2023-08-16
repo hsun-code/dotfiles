@@ -64,7 +64,7 @@ elif [[ -r "/opt/homebrew/etc/bash_completion.d/docker" ]]; then
 fi
 
 # macos homebrew
-if is_macos; then
+if hsun_is_macos; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
