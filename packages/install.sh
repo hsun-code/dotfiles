@@ -11,7 +11,7 @@ if is_macos; then
   hsun_macos_try_install vim wget curl git tree grep make bash
   hsun_macos_try_install autoconf bash-completion watch less
   hsun_macos_try_install openssh perl graphviz coreutils
-  hsun_macos_try_install unzip gzip findutils openldap
+  hsun_macos_try_install unzip gzip findutils openldap docker-completion
   # TODO gnu
 # brew install gnutls gnu-sed gnu-tar gnu-indent gnu-getopt gawk binutils diffutils gnu-which gpatch
 else

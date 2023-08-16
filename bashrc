@@ -58,6 +58,9 @@ elif [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]]; then
 elif [[ -r "/opt/homebrew/etc/bash_completion.d/git-completion.bash" ]]; then
   # macos: git completion
   . /opt/homebrew/etc/bash_completion.d/git-completion.bash
+elif [[ -r "/opt/homebrew/etc/bash_completion.d/docker" ]]; then
+  # macos: docker completion
+  . /opt/homebrew/etc/bash_completion.d/docker
 fi
 
 # macos homebrew
