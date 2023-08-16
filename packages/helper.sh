@@ -51,8 +51,10 @@ hsun_is_macos() {
 # macos
 # install one package via homebrew
 hsun_macos_try_install() {
-  if ! brew list -q "$@" > /dev/null; then
-    brew install "$@"
+  if brew list -q "$1" > /dev/null; then
+    echo "$1: Install already"
+  else
+    brew install "$1"
   fi
 }
 
@@ -61,14 +63,14 @@ hsun_macos_try_install() {
 # The first argument is the package name to be checked (and installed if not already).
 # other arguments are passed to apt-get
 hsun_ubuntu_try_install() {
-    dpkg -l "$1" | grep -q ^ii && msg "$1: Installed already" && return 1
-    sudo apt-get -y install "$@"
+    dpkg -l "$1" | grep -q ^ii && echo "$1: Installed already" && return 1
+    sudo apt-get -y install "$1"
     return 0
 }
 
 # returns 0 if the package was already installed and 1 otherwise.
 hsun_ubuntu_is_installed() {
-    dpkg -l "$1" | grep -q ^ii && msg "Installed already" && return 0
+    dpkg -l "$1" | grep -q ^ii && echo "Installed already" && return 0
     return 1
 }
 
