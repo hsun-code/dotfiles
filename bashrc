@@ -48,13 +48,17 @@ shopt -s cdspell
 
 # bash completion
 if [[ -f /usr/share/bash-completion/bash_completion ]]; then
+  # ubuntu: completion for utilities e.g., git docker
   . /usr/share/bash-completion/bash_completion
 elif [[ -f /etc/bash_completion ]]; then
   . /etc/bash_completion
 elif [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]]; then
   # macos
+  # TODO: git docker completion
   . /opt/homebrew/etc/profile.d/bash_completion.sh
 fi
+
+[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh" 
 
 #
 # Workspace
