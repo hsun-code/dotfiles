@@ -51,8 +51,8 @@ alias mydot="cd ${HSUN_DOTS}; l"
 alias myhome="cd ${HSUN_HOME}; l"
 alias mynv="cd ${HSUN_NVIM}; l"
 
-# TODO: nproc works for macos?
-if [ $(nproc) -gt 4 ] ; then njobs=$(($(nproc) / 2)) ; else njobs=1 ; fi
+if [ $(hsun_ncpu) -gt 32 ] ; then njobs=$(($(hsun_ncpu) / 2)) ; else njobs=$(hsun_ncpu) ; fi
+hsun_echo "njobs is $njobs"
 alias jdk-reconf-build="make reconfigure;make clean;make images JOBS=${njobs};make test-image"
 alias jdk-build="make images JOBS=${njobs};make test-image"
 

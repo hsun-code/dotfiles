@@ -43,6 +43,15 @@ hsun_is_macos() {
   fi
 }
 
+# return the number of logical cpus
+hsun_ncpu() {
+  if hsun_is_macos; then
+    sysctl -n hw.logicalcpu
+  else
+    nproc
+  fi
+}
+
 # macos
 # try to install one list of packages via homebrew
 hsun_macos_try_install() {

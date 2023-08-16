@@ -13,7 +13,7 @@ if is_macos; then
   hsun_macos_try_install openssh perl graphviz coreutils
   hsun_macos_try_install unzip gzip findutils openldap
   # TODO gnu
-  brew install gnutls gnu-sed gnu-tar gnu-indent gnu-getopt gawk binutils diffutils gnu-which gpatch
+# brew install gnutls gnu-sed gnu-tar gnu-indent gnu-getopt gawk binutils diffutils gnu-which gpatch
 else
   # common ones
   hsun_echo "ubuntu: try to install common packages"
