@@ -23,21 +23,16 @@ export HSUN_DOTS
 export HSUN_NVIM
 
 ###################
-# LD_LIBRARY_PATH
-###################
-
-# include HSUN_LIBS
-MY_LIB_PATH="${HOME}/libs"
-if [[ "$LD_LIBRARY_PATH" != *"$HSUN_LIBS:"* ]]; then
-  export LD_LIBRARY_PATH="$HSUN_LIBS:$LD_LIBRARY_PATH"
-fi
-echo "######################################"
-echo "LD_LIBRARY_PATH:$LD_LIBRARY_PATH"
-echo "######################################"
-
-###################
 # helper functions
 ###################
+
+# echo one message with delimeter
+hsun_echo() {
+  ECHO_LINE="######################################"
+  echo "$ECHO_LINE"
+  echo "$@"
+  echo "$ECHO_LINE"
+}
 
 # check if the underlying OS is macos
 hsun_is_macos() {
@@ -80,8 +75,20 @@ hsun_ubuntu_is_installed() {
     return 1
 }
 
+export -f hsun_echo
 export -f hsun_is_macos
 export -f hsun_macos_try_install
 export -f hsun_ubuntu_try_install
 export -f hsun_ubuntu_is_installed
+
+###################
+# LD_LIBRARY_PATH
+###################
+
+# include HSUN_LIBS
+MY_LIB_PATH="${HOME}/libs"
+if [[ "$LD_LIBRARY_PATH" != *"$HSUN_LIBS:"* ]]; then
+  export LD_LIBRARY_PATH="$HSUN_LIBS:$LD_LIBRARY_PATH"
+fi
+hsun_echo "LD_LIBRARY_PATH:$LD_LIBRARY_PATH"
 

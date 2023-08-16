@@ -7,6 +7,7 @@ source $HOME/hsun-code.code/dotfiles/packages/helper.sh
 #
 
 if is_macos; then
+  hsun_echo "macos: try to install common packages"
   hsun_macos_try_install bash-completion
   # Install common utilities.
   # Install coreutils for shell 'realpath command not found' issue.
@@ -18,8 +19,10 @@ if is_macos; then
   brew install graphviz
 else
   # common ones
+  hsun_echo "ubuntu: try to install common packages"
   hsun_ubuntu_try_install tmux numactl tree
   # JDK related
+  hsun_echo "ubuntu: try to install JDK related packages"
   hsun_ubuntu_try_install libasound2-dev libcups2-dev libfontconfig1-dev
   hsun_ubuntu_try_install libx11-dev libxext-dev libxrender-dev libxrandr-dev
   hsun_ubuntu_try_install libxtst-dev libxt-dev
@@ -27,6 +30,7 @@ fi
 
 # install neovim only on ubuntu
 if ! is_macos; then
+  hsun_echo "ubuntu: try to install neovim"
   bash $HSUN_DOTS/packages/install_neovim.sh
 fi
 
