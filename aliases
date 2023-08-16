@@ -38,7 +38,6 @@ alias cc="cat"
 alias fd="find . -name"
 alias h="history | tail -40"
 alias n="/usr/local/bin/nvim"
-alias rm="safe-rm"
 alias sr="source ${HOME}/.bashrc"
 alias v="vim"
 

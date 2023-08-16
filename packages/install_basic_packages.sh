@@ -3,9 +3,6 @@
 banner "Try to install package tmux"
 hsun_try_install tmux
 
-banner "Try to install package safe-rm"
-hsun_try_install safe-rm
-
 banner "Try to install package numactl"
 hsun_try_install numactl
 
