@@ -11,11 +11,9 @@ if is_macos; then
   hsun_macos_try_install vim wget curl git tree grep make bash
   hsun_macos_try_install autoconf bash-completion watch less
   hsun_macos_try_install openssh perl graphviz coreutils
-  # Install coreutils for shell 'realpath command not found' issue.
-  brew install procmail jq ed findutils gawk 
-  brew install gnutls gnu-sed gnu-tar gnu-indent gnu-getopt  openldap 
-  brew install binutils diffutils gnu-which gzip screen  wdiff gpatch
-  brew install rsync unzip file-formula mysql-client@8.0
+  hsun_macos_try_install unzip gzip findutils openldap
+  # TODO gnu
+  brew install gnutls gnu-sed gnu-tar gnu-indent gnu-getopt gawk binutils diffutils gnu-which gpatch
 else
   # common ones
   hsun_echo "ubuntu: try to install common packages"
