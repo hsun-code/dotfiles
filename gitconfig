@@ -22,8 +22,11 @@ d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-
 # Delete one branch.
 db = "!f() { git branch -D \"$1\"; }; f"
 
+# Find branches containing the name
+fb = "!f() { git branch -a | grep -i $1; }; f"
+
 # Find branches containing commit
-fb = "!f() { git branch -a --contains $1; }; f"
+fc = "!f() { git branch -a --contains $1; }; f"
 
 # Find commits by commit message
 fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
