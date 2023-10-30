@@ -51,8 +51,13 @@ fi
 #
 if [[ "$need_install" = true ]]; then
   echo "Build prerequisites"
-  hsun_ubuntu_try_install ninja-build gettext libtool libtool-bin autoconf
-  hsun_ubuntu_try_install automake cmake g++ pkg-config unzip curl doxygen
+  if is_fedora; then
+    hsun_fedora_try_install ninja-build gettext libtool libtool-bin autoconf
+    hsun_fedora_try_install automake cmake g++ pkg-config unzip curl doxygen
+  else
+    hsun_ubuntu_try_install ninja-build gettext libtool libtool-bin autoconf
+    hsun_ubuntu_try_install automake cmake g++ pkg-config unzip curl doxygen
+  fi
 
   nvim_src="/tmp/nvim_${RANDOM}"
   echo "Download the source code into $nvim_src"
@@ -72,5 +77,9 @@ fi
 #
 hsun_echo "Try to install NvChad's prerequisites"
 echo "install ripgrep: Required for grep searching with Telescope plugin"
-hsun_ubuntu_try_install ripgrep
+if is_fedora; then
+  hsun_fedora_try_install ripgrep
+else
+  hsun_ubuntu_try_install ripgrep
+fi
 

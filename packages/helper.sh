@@ -34,13 +34,18 @@ hsun_echo() {
   echo "$ECHO_LINE"
 }
 
-# check if the underlying OS is macos
+# check the underlying OS
 hsun_is_macos() {
   if [[ "$(uname -s)" = Darwin* ]]; then
     return 0
   else
     return 1
   fi
+}
+
+is_fedora() {
+  grep "ID=fedora" /etc/os-release
+  return $?
 }
 
 # return the number of logical cpus
@@ -62,6 +67,20 @@ hsun_macos_try_install() {
     else
       echo "Try to install: $package"
       brew install "$package"
+    fi
+  done
+}
+
+# fedora
+# try to install one list of packages via dnf
+hsun_fedora_try_install() {
+  for package in "$@";
+  do
+    if dnf list installed | grep -q "$package" ; then
+      echo "Installed already: $package "
+    else
+      echo "Try to install: $package"
+      sudo dnf -y install "$package"
     fi
   done
 }
@@ -89,6 +108,7 @@ hsun_ubuntu_is_installed() {
 export -f hsun_echo
 export -f hsun_is_macos
 export -f hsun_macos_try_install
+export -f hsun_fedora_try_install
 export -f hsun_ubuntu_try_install
 export -f hsun_ubuntu_is_installed
 

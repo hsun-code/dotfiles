@@ -14,6 +14,15 @@ if is_macos; then
   hsun_macos_try_install unzip gzip findutils openldap docker-completion
   # TODO gnu
 # brew install gnutls gnu-sed gnu-tar gnu-indent gnu-getopt gawk binutils diffutils gnu-which gpatch
+elif is_fedora; then
+  # common ones
+  hsun_echo "fedora: try to install common packages"
+  hsun_fedora_try_install tmux numactl tree
+  # JDK related
+  hsun_echo "fedora: try to install JDK related packages"
+  hsun_fedora_try_install libasound2-dev libcups2-dev libfontconfig1-dev
+  hsun_fedora_try_install libx11-dev libxext-dev libxrender-dev libxrandr-dev
+  hsun_fedora_try_install libxtst-dev libxt-dev
 else
   # common ones
   hsun_echo "ubuntu: try to install common packages"
@@ -26,7 +35,7 @@ else
 fi
 
 #
-# install neovim only on ubuntu
+# install neovim only on linux
 #
 
 if ! is_macos; then
