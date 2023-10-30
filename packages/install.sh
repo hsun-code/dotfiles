@@ -20,9 +20,9 @@ elif is_fedora; then
   hsun_fedora_try_install tmux numactl tree
   # JDK related
   hsun_echo "fedora: try to install JDK related packages"
-  hsun_fedora_try_install libasound2-dev libcups2-dev libfontconfig1-dev
-  hsun_fedora_try_install libx11-dev libxext-dev libxrender-dev libxrandr-dev
-  hsun_fedora_try_install libxtst-dev libxt-dev
+  hsun_fedora_try_install alsa-lib-devel cups-devel fontconfig-devel
+  hsun_fedora_try_install libX11-devel libXext-devel libXrender-devel
+  hsun_fedora_try_install libXrandr-devel libXtst-devel libXt-devel
 else
   # common ones
   hsun_echo "ubuntu: try to install common packages"

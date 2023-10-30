@@ -6,6 +6,8 @@
 # it should be installed in the same way. Otherwise, we may not find the
 # expected binary and I'm afraid the uninstall process doesn't work either.
 
+source $HOME/hsun-code.code/dotfiles/packages/helper.sh
+
 hsun_echo "Try to install package neovim"
 
 nvim_git_url="https://github.com/neovim/neovim.git"
