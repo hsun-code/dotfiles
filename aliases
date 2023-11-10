@@ -44,6 +44,9 @@ alias v="vim"
 # untar
 alias untar="tar xvf"
 
+# dcoker
+alias da="docker ps -a"
+
 # Workspace
 alias p="cd ${HOME}/jdk/jdk-src-dev; l"
 alias myc="cd ${HOME}/ci-scripts-dev; l"
