@@ -68,6 +68,9 @@ if hsun_is_macos; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+# export JT_HOME
+export JT_HOME=${HSUN_LIBS}/jtreg
+
 #
 # Workspace
 #
