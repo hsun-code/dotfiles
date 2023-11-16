@@ -5,6 +5,7 @@ Powered by [dotbot](https://github.com/anishathalye/dotbot).
 Configuration files
 
 Reference: [Why would I want my dotfiles on github](http://dotfiles.github.io/).
+Reference: [Managing your dotfiles](https://anishathalye.com/managing-your-dotfiles/).
 
 
 ## How to install
@@ -17,6 +18,6 @@ bash package/install.sh
 bash install
 
 # source
-source ~/.bashrc
+source ~/.bash_profile
 ```
 
