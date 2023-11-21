@@ -8,10 +8,10 @@ source $HOME/hsun-code.code/dotfiles/packages/helper.sh
 
 if is_macos; then
   hsun_echo "macos: try to install common packages"
-  hsun_macos_try_install vim wget curl git tree grep make bash
-  hsun_macos_try_install autoconf bash-completion watch less
-  hsun_macos_try_install openssh perl graphviz coreutils
-  hsun_macos_try_install unzip gzip findutils openldap docker-completion
+  hsun_macos_try_install autoconf bash bash-completion coreutils curl
+  hsun_macos_try_install docker-completion fd findutils git graphviz grep
+  hsun_macos_try_install gzip less make openldap openssh perl tree
+  hsun_macos_try_install unzip vim watch wget
   # TODO gnu
 # brew install gnutls gnu-sed gnu-tar gnu-indent gnu-getopt gawk binutils diffutils gnu-which gpatch
 elif is_fedora; then
