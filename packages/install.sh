@@ -7,13 +7,15 @@ source $HOME/hsun-code.code/dotfiles/packages/helper.sh
 #
 
 if is_macos; then
+  # TODO: don't install fd-find for macos due to this issue
+  # https://github.com/sharkdp/fd/issues/1407
   hsun_echo "macos: try to install common packages"
   hsun_macos_try_install autoconf bash bash-completion coreutils curl
-  hsun_macos_try_install docker-completion fd findutils git graphviz grep
+  hsun_macos_try_install docker-completion findutils git graphviz grep
   hsun_macos_try_install gzip less make openldap openssh perl tree
   hsun_macos_try_install unzip vim watch wget
   # TODO gnu
-# brew install gnutls gnu-sed gnu-tar gnu-indent gnu-getopt gawk binutils diffutils gnu-which gpatch
+  # brew install gnutls gnu-sed gnu-tar gnu-indent gnu-getopt gawk binutils diffutils gnu-which gpatch
 elif is_fedora; then
   # common ones
   hsun_echo "fedora: try to install common packages"
