@@ -17,7 +17,7 @@ if is_macos; then
 elif is_fedora; then
   # common ones
   hsun_echo "fedora: try to install common packages"
-  hsun_fedora_try_install bash-completion gdb numactl tmux tree
+  hsun_fedora_try_install bash-completion fd-find gdb numactl tmux tree
   # JDK related
   hsun_echo "fedora: try to install JDK related packages"
   hsun_fedora_try_install alsa-lib-devel cups-devel fontconfig-devel
@@ -26,7 +26,7 @@ elif is_fedora; then
 else
   # common ones
   hsun_echo "ubuntu: try to install common packages"
-  hsun_ubuntu_try_install numactl tmux tree
+  hsun_ubuntu_try_install fd-find numactl tmux tree
   # JDK related
   hsun_echo "ubuntu: try to install JDK related packages"
   hsun_ubuntu_try_install libasound2-dev libcups2-dev libfontconfig1-dev

@@ -32,7 +32,6 @@ alias ....="cd ../../..; ls"
 alias grep='grep --color=auto '
 
 # Shortcuts
-alias fd="find . -name"
 alias h="history | tail -40"
 alias n="/usr/local/bin/nvim"
 alias sr="source ${HOME}/.bashrc"
