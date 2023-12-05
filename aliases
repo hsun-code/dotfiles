@@ -43,6 +43,9 @@ alias untar="tar xvf"
 # dcoker
 alias da="docker ps -a"
 
+# git
+alias git-set-loc="git config --local user.name 'Hao Sun';git config --local user.email 'hsun-code@outlook.com'"
+
 # Workspace
 alias p="cd ${HOME}/jdk/jdk-src-dev; l"
 alias myc="cd ${HOME}/ci-scripts-dev; l"
