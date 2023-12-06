@@ -58,3 +58,13 @@ hsun_echo "njobs is $njobs"
 alias jdk-reconf-build="make reconfigure;make clean;make images JOBS=${njobs};make test-image"
 alias jdk-build="make images JOBS=${njobs};make test-image"
 
+# jdk config
+# more falgs can be passed, e.g.
+#   --enable-branch-protection
+#   --disable-warnings-as-errors
+#   --with-extra-cxxflags=--verbose
+#   --with-toolchain-type=clang
+alias jdk-conf="bash ../jdk-src-dev/configure --with-boot-jdk=${HOME}/libs/boot-jdk-aarch64 \
+                --with-jtreg=${HOME}/libs/jtreg --with-gtest=${HOME}/libs/gtest \
+                --disable-precompiled-headers --with-debug-level=fastdebug $@"
+
