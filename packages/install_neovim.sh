@@ -79,9 +79,11 @@ fi
 #
 hsun_echo "Try to install NvChad's prerequisites"
 echo "install ripgrep: Required for grep searching with Telescope plugin"
+echo "install ccls"
 if is_fedora; then
   hsun_fedora_try_install ripgrep
 else
+  hsun_ubuntu_try_install ccls
   hsun_ubuntu_try_install ripgrep
 fi
 
