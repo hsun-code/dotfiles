@@ -46,11 +46,11 @@ man() {
 }
 
 function mypull() {
-  # TODO: nvchad... shoudl fetch the latest code from upstream.
-  banner "Update hsun-code dotfiles and NvChad"
+  echo "Pull the latest code for my personal repos"
   cd ${HOME}/hsun-code.code/dotfiles && git pull origin master && cd -
+  cd ${HOME}/hsun-code.code/misc && git pull origin master && cd -
   cd ${HOME}/hsun-code.code/NvChad && git pull origin master && cd -
+  echo "Install the lastest dotfiles"
   bash ${HOME}/hsun-code.code/dotfiles/install
-  source ~/.bashrc
 }
 
