@@ -68,3 +68,13 @@ function my_newcontainer() {
   fi
 }
 
+# Create compile_commands.json for jdk project
+# Note that it's under one jdk src dir now.
+function my_ccls_jdk() {
+  echo "Try to generate compile_commands.json for OpenJDK. Ref: doc/ide.md"
+  bash ./configure --with-boot-jdk=$HOME/libs/boot-jdk-aarch64 --with-debug-level=fastdebug
+  make compile-commands
+  ls build/linux-aarch64-server-fastdebug/compile_commands.json
+  mv build/linux-aarch64-server-fastdebug/compile_commands.json .
+}
+
