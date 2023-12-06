@@ -54,3 +54,17 @@ function mypull() {
   bash ${HOME}/hsun-code.code/dotfiles/install
 }
 
+# Create one docker container
+# $1: container name
+# $2: docker image
+function my_newcontainer() {
+  local _name=$1
+  local _image=$2
+  if [[ $# -eq 2 ]] ; then
+    docker run --init -h $_name -id --name $_name -e USER=root --privileged \
+      --oom-score-adj=900 -v /mnt/ceph:/mnt/ceph $_image
+  else
+    echo "Bad arguments are passed: exit!"
+  fi
+}
+
