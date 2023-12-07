@@ -57,14 +57,7 @@ if [ $(hsun_ncpu) -gt 32 ] ; then njobs=$(($(hsun_ncpu) / 2)) ; else njobs=$(hsu
 hsun_echo "njobs is $njobs"
 alias jdk-reconf-build="make reconfigure;make clean;make images JOBS=${njobs};make test-image"
 alias jdk-build="make images JOBS=${njobs};make test-image"
-
-# jdk config
-# more falgs can be passed, e.g.
-#   --enable-branch-protection
-#   --disable-warnings-as-errors
-#   --with-extra-cxxflags=--verbose
-#   --with-toolchain-type=clang
-alias jdk-conf="bash ../jdk-src-dev/configure --with-boot-jdk=${HOME}/libs/boot-jdk-aarch64 \
-                --with-jtreg=${HOME}/libs/jtreg --with-gtest=${HOME}/libs/gtest \
+alias jdk-conf="bash ../jdk-src-dev/configure --with-boot-jdk=${HSUN_LIBS}/boot-jdk-aarch64 \
+                --with-jtreg=${HSUN_LIBS}/jtreg --with-gtest=${HSUN_LIBS}/gtest \
                 --disable-precompiled-headers --with-debug-level=fastdebug $@"
 

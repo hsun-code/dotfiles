@@ -11,7 +11,7 @@ function c() {
 }
 
 # Determine size of a file or total size of a directory
-function fs() {
+function hsun_fs() {
 	if du -b /dev/null > /dev/null 2>&1; then
 		local arg=-sbh;
 	else
@@ -28,7 +28,7 @@ function fs() {
 # the `.git` directory, listing directories first. The output gets piped into
 # `less` with options to preserve color and line numbers, unless the output is
 # small enough for one screen.
-function tre() {
+function hsun_tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst -L 3 "$@" | less -FRNX;
 }
 
@@ -45,7 +45,7 @@ man() {
 		man "$@"
 }
 
-function mypull() {
+function hsun_pull() {
   echo "Pull the latest code for my personal repos"
   cd ${HOME}/hsun-code.code/dotfiles && git pull origin master && cd -
   cd ${HOME}/hsun-code.code/misc && git pull origin master && cd -
@@ -57,7 +57,7 @@ function mypull() {
 # Create one docker container
 # $1: container name
 # $2: docker image
-function my_newcontainer() {
+function hsun_newcontainer() {
   local _name=$1
   local _image=$2
   if [[ $# -eq 2 ]] ; then
@@ -70,11 +70,44 @@ function my_newcontainer() {
 
 # Create compile_commands.json for jdk project
 # Note that it's under one jdk src dir now.
-function my_ccls_jdk() {
+function hsun_ccls_jdk() {
   echo "Try to generate compile_commands.json for OpenJDK. Ref: doc/ide.md"
   bash ./configure --with-boot-jdk=$HOME/libs/boot-jdk-aarch64 --with-debug-level=fastdebug
   make compile-commands
   ls build/linux-aarch64-server-fastdebug/compile_commands.json
   mv build/linux-aarch64-server-fastdebug/compile_commands.json .
+}
+
+# Dump some help info
+# $1: can be jdk docker sshkey
+function hsun_help() {
+  local _count=$#
+  if [[ $_count -eq 0 ]] ; then
+    hsun_echo "Example: hsun_help XX"
+    hsun_echo "         XX can be jdk|docker|sshkey"
+    return
+  elif [[ $_count -gt 1 ]] ; then
+    hsun_echo "Warning: Only one arg is supported!"
+    return
+  fi
+  local _type=$1
+  if [[ "$_type" = "jdk" ]] ; then
+    hsun_echo "Predifined cmds:"
+    echo "Only config: jdk-conf"
+    echo "Only build: jdk-build"
+    echo "Re-config and then build: jdk-reconf-build"
+    hsun_echo "jdk config arg:"
+    echo "--enable-branch-protection"
+    echo "--disable-warnings-as-errors"
+    echo "--with-extra-cxxflags=--verbose"
+    echo "--with-toolchain-type=clang"
+  elif [[ "$_type" = "docker" ]] ; then
+    hsun_echo "docker cmds:"
+    echo "1. docker image list"
+    echo "2. hsun_newcontainer fedora-arm-dev ubuntu/22.04"
+  elif [[ "$_type" = "sshkey" ]] ; then
+    hsun_echo "ssh-key generation:"
+    echo "todo"
+  fi
 }
 
