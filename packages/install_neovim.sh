@@ -84,6 +84,8 @@ if is_fedora; then
   hsun_fedora_try_install ripgrep
 else
   hsun_ubuntu_try_install ccls
+  hsun_ubuntu_try_install nodejs # node --version; npm --version
+  hsun_ubuntu_try_install python3-venv
   hsun_ubuntu_try_install ripgrep
 fi
 
