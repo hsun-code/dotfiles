@@ -54,11 +54,12 @@ fi
 if [[ "$need_install" = true ]]; then
   echo "Build prerequisites"
   if is_fedora; then
+    # TODO: not sure if the names are correct...
     hsun_fedora_try_install ninja-build gettext libtool libtool-bin autoconf
     hsun_fedora_try_install automake cmake g++ pkg-config unzip curl doxygen
   else
-    hsun_ubuntu_try_install ninja-build gettext libtool libtool-bin autoconf
-    hsun_ubuntu_try_install automake cmake g++ pkg-config unzip curl doxygen
+    hsun_ubuntu_try_install autoconf automake cmake curl doxygen g++ gettext
+    hsun_ubuntu_try_install libtool libtool-bin ninja-build pkg-config unzip
   fi
 
   nvim_src="/tmp/nvim_${RANDOM}"
@@ -84,7 +85,8 @@ if is_fedora; then
   hsun_fedora_try_install ripgrep
 else
   hsun_ubuntu_try_install ccls
-  hsun_ubuntu_try_install nodejs # node --version; npm --version
+  hsun_ubuntu_try_install nodejs
+  hsun_ubuntu_try_install npm
   hsun_ubuntu_try_install python3-venv
   hsun_ubuntu_try_install ripgrep
 fi
