@@ -14,11 +14,13 @@ export MANPAGER="less -X";
 # Pre-defined directories
 HSUN_HOME="$HOME/myhome"
 HSUN_LIBS="$HOME/libs"
-HSUN_DOTS="$HOME/hsun-code.code/dotfiles"
-HSUN_NVIM="$HOME/hsun-code.code/NvChad"
+HSUN_CODE="$HOME/hsun-code.code"
+HSUN_DOTS="$HSUN_CODE/dotfiles"
+HSUN_NVIM="$HSUN_CODE/NvChad"
 
 export HSUN_HOME
 export HSUN_LIBS
+export HSUN_CODE
 export HSUN_DOTS
 export HSUN_NVIM
 
