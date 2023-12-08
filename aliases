@@ -52,6 +52,7 @@ alias myc="cd ${HOME}/ci-scripts-dev; l"
 alias mydot="cd ${HSUN_DOTS}; l"
 alias myhome="cd ${HSUN_HOME}; l"
 alias mynv="cd ${HSUN_NVIM}; l"
+alias hsun_bootstrap="bash ${HSUN_HOME}/scripts/setup/bootstrap.sh"
 
 if [ $(hsun_ncpu) -gt 32 ] ; then njobs=$(($(hsun_ncpu) / 2)) ; else njobs=$(hsun_ncpu) ; fi
 hsun_echo "njobs is $njobs"
