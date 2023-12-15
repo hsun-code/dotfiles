@@ -53,7 +53,7 @@ fi
 #
 if [[ "$need_install" = true ]]; then
   echo "Build prerequisites"
-  if is_fedora; then
+  if hsun_is_fedora; then
     # TODO: not sure if the names are correct...
     hsun_fedora_try_install ninja-build gettext libtool libtool-bin autoconf
     hsun_fedora_try_install automake cmake g++ pkg-config unzip curl doxygen
@@ -81,7 +81,7 @@ fi
 hsun_echo "Try to install NvChad's prerequisites"
 echo "install ripgrep: Required for grep searching with Telescope plugin"
 echo "install ccls"
-if is_fedora; then
+if hsun_is_fedora; then
   hsun_fedora_try_install ripgrep
 else
   hsun_ubuntu_try_install ccls

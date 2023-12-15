@@ -12,13 +12,11 @@ export LC_ALL="en_US.UTF-8";
 export MANPAGER="less -X";
 
 # Pre-defined directories
-HSUN_HOME="$HOME/myhome"
 HSUN_LIBS="$HOME/libs"
 HSUN_CODE="$HOME/hsun-code.code"
 HSUN_DOTS="$HSUN_CODE/dotfiles"
 HSUN_NVIM="$HSUN_CODE/NvChad"
 
-export HSUN_HOME
 export HSUN_LIBS
 export HSUN_CODE
 export HSUN_DOTS
@@ -31,9 +29,18 @@ export HSUN_NVIM
 # echo one message with delimeter
 hsun_echo() {
   ECHO_LINE="######################################"
+  echo ""
   echo "$ECHO_LINE"
   echo "$@"
   echo "$ECHO_LINE"
+  echo ""
+}
+
+hsun_error() {
+  ECHO_LINE="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+  echo "$ECHO_LINE"
+  echo "$@"
+  exit 1
 }
 
 # check the underlying OS
@@ -45,7 +52,7 @@ hsun_is_macos() {
   fi
 }
 
-is_fedora() {
+hsun_is_fedora() {
   grep "ID=fedora" /etc/os-release
   return $?
 }
@@ -109,6 +116,7 @@ hsun_ubuntu_is_installed() {
 
 export -f hsun_echo
 export -f hsun_is_macos
+export -f hsun_is_fedora
 export -f hsun_macos_try_install
 export -f hsun_fedora_try_install
 export -f hsun_ubuntu_try_install

@@ -6,7 +6,7 @@ source $HOME/hsun-code.code/dotfiles/packages/helper.sh
 # Install common packages
 #
 
-if is_macos; then
+if hsun_is_macos; then
   # TODO: don't install fd-find for macos due to this issue
   # https://github.com/sharkdp/fd/issues/1407
   hsun_echo "macos: try to install common packages"
@@ -16,7 +16,7 @@ if is_macos; then
   hsun_macos_try_install unzip vim watch wget
   # TODO gnu
   # brew install gnutls gnu-sed gnu-tar gnu-indent gnu-getopt gawk binutils diffutils gnu-which gpatch
-elif is_fedora; then
+elif hsun_is_fedora; then
   # common ones
   hsun_echo "fedora: try to install common packages"
   hsun_fedora_try_install bash-completion fd-find gdb numactl tmux tree
@@ -42,7 +42,7 @@ fi
 # install neovim only on linux
 #
 
-if ! is_macos; then
+if ! hsun_is_macos; then
   hsun_echo "ubuntu: try to install neovim"
   bash $HSUN_DOTS/packages/install_neovim.sh
 fi
