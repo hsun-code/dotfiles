@@ -26,9 +26,11 @@ elif is_fedora; then
   hsun_fedora_try_install libX11-devel libXext-devel libXrender-devel
   hsun_fedora_try_install libXrandr-devel libXtst-devel libXt-devel
 else
+  sudo apt-get -y update
+  sudo apt-get -y upgrade
   # common ones
   hsun_echo "ubuntu: try to install common packages"
-  hsun_ubuntu_try_install fd-find numactl tmux tree
+  hsun_ubuntu_try_install autoconf fd-find gcc make numactl tmux tree
   # JDK related
   hsun_echo "ubuntu: try to install JDK related packages"
   hsun_ubuntu_try_install libasound2-dev libcups2-dev libfontconfig1-dev
