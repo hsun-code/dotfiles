@@ -78,9 +78,13 @@ whoami = config user.email
 # Color graph log view
 graph = log --graph --color --pretty=format:"%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%x20(%ce)%n%x20%s%n"
 
+# @deprecated
 # Workspace: gerrit push and pull (default)
-mypush = push cambridge HEAD:refs/for/master
-mypull = pull local master
+#mypush = push cambridge HEAD:refs/for/master
+#mypull = pull local master
+
+# default push
+dpush = push origin master
 
 [apply]
 # Detect whitespace errors when applying a patch.

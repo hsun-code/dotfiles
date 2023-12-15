@@ -68,16 +68,18 @@ if hsun_is_macos; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+# @deprecated
 # export JT_HOME
-export JT_HOME=${HSUN_LIBS}/jtreg
+#export JT_HOME=${HSUN_LIBS}/jtreg
 
 #
 # Workspace
 #
 
+# @deprecated
 # Always get the latest code for ci-scripts repo and set up the env
-cd ${HOME}/ci-scripts && git pull local master && cd -
-. ${HOME}/ci-scripts/helper/envsetup.sh
+#cd ${HOME}/ci-scripts && git pull local master && cd -
+#. ${HOME}/ci-scripts/helper/envsetup.sh
 
 # todo: remove nvim swap files
 

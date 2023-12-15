@@ -43,22 +43,25 @@ alias untar="tar xvf"
 # dcoker
 alias da="docker ps -a"
 
+# @deprecated
 # git
-alias git-set-loc="git config --local user.name 'Hao Sun';git config --local user.email 'hsun-code@outlook.com'"
+#alias git-set-loc="git config --local user.name 'Hao Sun';git config --local user.email 'hsun-code@outlook.com'"
 
 # Workspace
-alias p="cd ${HOME}/jdk/jdk-src-dev; l"
-alias myc="cd ${HOME}/ci-scripts-dev; l"
 alias mydot="cd ${HSUN_DOTS}; l"
-alias myhome="cd ${HSUN_HOME}; l"
 alias mynv="cd ${HSUN_NVIM}; l"
-alias hsun_bootstrap="bash ${HSUN_HOME}/scripts/setup/bootstrap.sh"
+# @deprecated
+#alias p="cd ${HOME}/jdk/jdk-src-dev; l"
+#alias myc="cd ${HOME}/ci-scripts-dev; l"
+#alias myhome="cd ${HSUN_HOME}; l"
+alias hsun_bootstrap="bash ${HSUN_DOTS}/packages/bootstrap.sh"
 
 if [ $(hsun_ncpu) -gt 32 ] ; then njobs=$(($(hsun_ncpu) / 2)) ; else njobs=$(hsun_ncpu) ; fi
 hsun_echo "njobs is $njobs"
-alias jdk-reconf-build="make reconfigure;make clean;make images JOBS=${njobs};make test-image"
-alias jdk-build="make images JOBS=${njobs};make test-image"
-alias jdk-conf="bash ../jdk-src-dev/configure --with-boot-jdk=${HSUN_LIBS}/boot-jdk-aarch64 \
-                --with-jtreg=${HSUN_LIBS}/jtreg --with-gtest=${HSUN_LIBS}/gtest \
-                --disable-precompiled-headers --with-debug-level=fastdebug $@"
+# @deprecated
+#alias jdk-reconf-build="make reconfigure;make clean;make images JOBS=${njobs};make test-image"
+#alias jdk-build="make images JOBS=${njobs};make test-image"
+#alias jdk-conf="bash ../jdk-src-dev/configure --with-boot-jdk=${HSUN_LIBS}/boot-jdk-aarch64 \
+#                --with-jtreg=${HSUN_LIBS}/jtreg --with-gtest=${HSUN_LIBS}/gtest \
+#                --disable-precompiled-headers --with-debug-level=fastdebug $@"
 
