@@ -22,12 +22,11 @@ _prefix="git@github.com:hsun-code"
 
 for _repo in ${_repos[@]} ;  do
   hsun_echo "Try to download repo: $_repo"
-	if [[ -d "$HSUN_CODE/$_repo" ]] ; then
-		echo "$_repo exists. pass"
-	else
-		git clone "$_prefix/$_repo.git" "$HSUN_CODE/$_repo"
-    echo "download done"
-	fi
+  if [[ -d "$HSUN_CODE/$_repo" ]] ; then
+    echo "$_repo exists. pass"
+  else
+    git clone "$_prefix/$_repo.git" "$HSUN_CODE/$_repo"
+  fi
 done
 
 #
