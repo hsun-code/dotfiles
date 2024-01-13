@@ -44,6 +44,6 @@ fi
 
 if ! hsun_is_macos; then
   hsun_echo "ubuntu: try to install neovim"
-  bash $HSUN_DOTS/packages/install_neovim.sh
+  bash $HSUN_DOTS/packages/install-neovim.sh
 fi
 
